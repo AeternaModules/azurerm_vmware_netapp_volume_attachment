@@ -1,3 +1,7 @@
+output "vmware_netapp_volume_attachments_id" {
+  description = "Map of id values across all vmware_netapp_volume_attachments, keyed the same as var.vmware_netapp_volume_attachments"
+  value       = { for k, v in azurerm_vmware_netapp_volume_attachment.vmware_netapp_volume_attachments : k => v.id }
+}
 output "vmware_netapp_volume_attachments_name" {
   description = "Map of name values across all vmware_netapp_volume_attachments, keyed the same as var.vmware_netapp_volume_attachments"
   value       = { for k, v in azurerm_vmware_netapp_volume_attachment.vmware_netapp_volume_attachments : k => v.name }
